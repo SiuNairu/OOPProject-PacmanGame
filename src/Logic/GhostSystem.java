@@ -29,7 +29,7 @@ public class GhostSystem {
 
         for (Ghost g : state.getGhosts()) {
 
-            // === Collision Pacman - Ghost ===
+            //Collision: Ghost
             if (collisionDetector.checkCollision(g, state.getPacman())) {
 
                 if (state.isPowerMode()) {
@@ -50,8 +50,7 @@ public class GhostSystem {
                     return;
                 }
             }
-
-            // === Update ghost behavior ===
+            
             ghostController.updateGhostBehavior(
                     g,
                     state.getPacman(),
