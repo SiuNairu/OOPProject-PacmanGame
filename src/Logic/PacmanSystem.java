@@ -16,7 +16,7 @@ public class PacmanSystem {
     public void update(long now) {
 
         PacmanPlayer pacman = state.getPacman();
-        if (pacman == null) return; // ✅ FIX NPE – defensive programming
+        if (pacman == null) return; 
 
         if (pacman.getPendingDirection() != null) {
             if (collisionDetector.canMove(
