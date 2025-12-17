@@ -11,14 +11,12 @@ public class GhostController {
 
     private final Random random = new Random();
     private final CollisionDetector collisionDetector;
-    private final int TILE_SIZE; // no hardcoded 32
+    private final int TILE_SIZE;
 
     public GhostController(CollisionDetector collisionDetector, int tileSize) {
         this.collisionDetector = collisionDetector;
         this.TILE_SIZE = tileSize;
     }
-
-    // ========== PUBLIC API (one job: update ghost behavior) ==========
 
     public void updateGhostBehavior(Ghost g, PacmanPlayer pacman, long now, boolean powerMode, Set<Block> walls) {
         tryTurn(g, pacman, now, powerMode, walls);
@@ -26,15 +24,12 @@ public class GhostController {
         recoverIfHitWall(g, powerMode, walls);
         collisionDetector.checkBoundaries(g);
     }
-
-    // Optional: move your old Ghost.initializeRandomDirection() into controller (SRP)
+    
     public void initGhostDirection(Ghost g, boolean powerMode, Set<Block> walls) {
         Direction d = pickRandomValidDirection(g, walls);
         if (d == null) d = Direction.UP;
         g.applyDirection(d, powerMode);
     }
-
-    // ========== SRP helpers (small, single-purpose methods) ==========
 
     private void tryTurn(Ghost g, PacmanPlayer pacman, long now, boolean powerMode, Set<Block> walls) {
         if (!g.canTurnNow(now)) return;
@@ -66,8 +61,6 @@ public class GhostController {
         }
         return false;
     }
-
-    // ========== AI DECISION (still inside controller; SRP = “ghost behavior”) ==========
 
     private Direction chooseDirection(Ghost g, PacmanPlayer pacman, boolean powerMode, Set<Block> walls) {
         if (powerMode) return pickRandomValidDirection(g, walls);
