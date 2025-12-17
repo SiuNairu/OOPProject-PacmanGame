@@ -1,2 +1,2 @@
 # OOPProject-PacmanGame
-OOP game project 
+OOP game project: Pacman Game
