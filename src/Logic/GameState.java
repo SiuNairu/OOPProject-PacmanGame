@@ -9,7 +9,7 @@ package Logic;
 
     public class GameState {
 
-        // === Entities ===
+        //Entities
         private PacmanPlayer pacman;
         private final Set<Block> walls = new HashSet<>();
         private final Set<Block> foods = new HashSet<>();
@@ -17,18 +17,17 @@ package Logic;
         private Block cherry;
         private final List<Popup> popups = new ArrayList<>();
 
-        // === Game info ===
+        //Game info 
         private int score = 0;
         private int lives = 3;
         private boolean gameOver = false;
         private int currentLevel = 0;
 
-        // === Power mode ===
+        //Power mode
         private boolean powerMode = false;
         private long powerModeUntilMs = 0;
         private long nextCherryAtMs = 0;
 
-        // ================= GETTERS =================
         public PacmanPlayer getPacman() {
             return pacman;
         }
@@ -81,7 +80,6 @@ package Logic;
             return nextCherryAtMs;
         }
 
-        // ================= SETTERS / ACTIONS =================
         public void setPacman(PacmanPlayer pacman) {
             this.pacman = pacman;
         }
@@ -139,7 +137,7 @@ package Logic;
             powerModeUntilMs = 0;
         }
 
-        // ================= RESET =================
+        //Reset
         public void resetForNewLevel() {
             powerMode = false;
             cherry = null;
