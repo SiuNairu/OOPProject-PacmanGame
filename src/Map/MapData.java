@@ -1,18 +1,12 @@
 package Map;
 
-// File: MapData.java
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapData {
 
-    // Danh sách lưu trữ tất cả các bản đồ
     private static final List<String[]> ALL_MAPS = new ArrayList<>();
 
-    // X = wall, O = skip, P = pac man, ' ' = food
-    // Ghost: b = blue, o = orange, p = pink, r = red
-
-    // MAP LEVEL 0
     private static final String[] MAP_LEVEL_0 = {
         "XXXXXXXXXXXXXXXXXXX",
         "X        X        X",
