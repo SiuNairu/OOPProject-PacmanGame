@@ -11,7 +11,6 @@ public class Block {
     public Image image;
     public Image normalImage;
 
-    // SỬA: Chuyển sang private để đảm bảo tính đóng gói
     private final int startX;
     private final int startY;
 

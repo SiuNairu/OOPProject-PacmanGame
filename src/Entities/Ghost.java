@@ -1,10 +1,12 @@
+
 package Entities;
 
-import java.awt.Image;
-import java.util.Random;
 import Utils.Direction;
 
-public class Ghost extends MovableBlock {
+import java.awt.*;
+import java.util.Random;
+
+public class Ghost extends MovableBlock implements Updatable {
 
     private static final Random random = new Random();
 
@@ -19,7 +21,7 @@ public class Ghost extends MovableBlock {
         resetTurnCooldown();
     }
 
-    // ===== MOVEMENT MECHANICS ONLY =====
+    //MOVEMENT MECHANICS ONLY
 
     private int getStep(boolean powerMode) {
         if (getWidth() <= 0) return 0;
@@ -36,7 +38,7 @@ public class Ghost extends MovableBlock {
         super.updateVelocity(step);
     }
 
-    // ===== TURN COOLDOWN (MECHANICS, NOT AI) =====
+    //TURN COOLDOWN (MECHANICS, NOT AI)
 
     public boolean canTurnNow(long now) {
         if (now - lastTurnMs < turnCooldownMs) return false;
@@ -45,6 +47,11 @@ public class Ghost extends MovableBlock {
         lastTurnMs = now;
         resetTurnCooldown();
         return true;
+    }
+
+    @Override
+    public void update(long now, boolean powerMode) {
+        updateVelocity(powerMode);
     }
 
     private void resetTurnCooldown() {
