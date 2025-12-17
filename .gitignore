@@ -1,0 +1,28 @@
+# Build artifacts
+build/
+dist/
+*.class
+*.jar
+
+# NetBeans
+nbproject/private/
+nbproject/build-impl.xml
+nbbuild/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# IDEs
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+*.swp
+*_BACKUP_.*
+
+# Logs
+*.log
+
+# Others
+out/
