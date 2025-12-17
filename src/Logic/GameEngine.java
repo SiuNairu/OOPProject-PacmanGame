@@ -38,20 +38,20 @@ public class GameEngine {
     }
 
     public void loadLevel(int level, GameMap map) {
-        // Reset toàn bộ state cho level mới
+        //Rest all stage
         state.reset();
 
-        // Set level hiện tại (nên có setter)
+        // Set level
         state.setCurrentLevel(level);
 
-        // Load map tương ứng level
+        // Load map 
         map.loadMap(level, state);
         long now = System.currentTimeMillis();
 
-        // ✅ Cherry lần đầu sau 15s
+        // First Cherry after 15s
         state.setNextCherryAtMs(now + 15000);
 
-        // Reset trạng thái game
+        // Reset power
         state.deactivatePowerMode();
     }
 }
