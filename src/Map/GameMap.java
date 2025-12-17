@@ -44,7 +44,6 @@ public class GameMap {
 
     public void loadMap(int level, GameState state) {
 
-        // ⚠️ KHÔNG tạo collection mới
         state.getWalls().clear();
         state.getFoods().clear();
         state.getGhosts().clear();
