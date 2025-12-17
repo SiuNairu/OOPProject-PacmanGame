@@ -2,7 +2,7 @@ package Utils;
 public enum Direction {
     UP, DOWN, LEFT, RIGHT;
 
-    // Hỗ trợ AI: Lấy hướng ngược lại
+    //AI behavior support
     public Direction opposite() {
         switch (this) {
             case UP:    return DOWN;
