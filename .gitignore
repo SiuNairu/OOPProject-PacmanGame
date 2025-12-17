@@ -1,3 +1,4 @@
+
 # Build artifacts
 build/
 dist/
@@ -26,3 +27,8 @@ nb-configuration.xml
 
 # Others
 out/
+
+*.class
+build/
+dist/
+(Initial commit: Map package)
